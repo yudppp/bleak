@@ -144,6 +144,18 @@ jQuery(function($) {
 	}
 	comments();
 
+
+	function swipers() {
+		var swiper = new Swiper('.swiper-container', {
+				pagination: '.swiper-pagination',
+				slidesPerView: 'auto',
+				centeredSlides: true,
+				paginationClickable: true,
+				spaceBetween: 30
+		});
+	}
+	swipers()
+
 	/* ==========================================================================
 	   Reading Time
 	   ========================================================================== */
@@ -179,6 +191,7 @@ jQuery(function($) {
 		comments();
 		currentMenuFix();
 		readingTime();
+		swipers();
 	}
 
 	/* ==========================================================================
@@ -288,6 +301,9 @@ jQuery(function($) {
 				History.pushState({}, title, url);
 	        }
 	    }
+			setTimeout(function() {
+				swipers()
+			}, 700);
 	});
 
 	$('body').on('click', '#post-index .post .js-ajax-link', function() {
@@ -297,4 +313,5 @@ jQuery(function($) {
 			post.addClass('active');
 		}, 1);
 	});
+
 });

@@ -11,6 +11,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 	<link rel="stylesheet" type="text/css" href="{{asset "css/dependencies.css"}}" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
 	<link rel="stylesheet" type="text/css" href="{{asset "css/style.css"}}" />
 
 	{{ghost_head}}
@@ -31,7 +32,6 @@
 					</a>
 				</div>
 				<div class="nav-menu">
-					<a class="rss" href="{{@blog.url}}/rss/"><i class="icon-rss"></i></a>
 					{{#if @blog.navigation}}
 					<a class="menu" data-action="menu" data-target="menu"><i class="icon-menu"></i></a>
 					{{/if}}
@@ -41,8 +41,7 @@
 			<div id="body-class" style="display: none;" class="{{body_class}}"></div>
 			<footer id="footer">
 				<section class="credits">
-					<span class="credits-theme">Theme <a href="https://github.com/zutrinken/bleak" target="_blank" rel="nofollow">Bleak</a> by <a href="http://zutrinken.com" target="_blank" rel="nofollow">zutrinken</a></span>
-					<span class="credits-software">Published with <a href="http://ghost.org" target="_blank" rel="nofollow">Ghost</a></span>
+					<span class="credits-software">Published with <a href="http://ghost.org" target="_blank" rel="nofollow">Hoge</a></span>
 				</section>
 			</footer>
 			{{#if @blog.navigation}}
@@ -53,6 +52,7 @@
 	{{ghost_foot}}
 	
 	<script type="text/javascript" src="{{asset "js/dependencies.js"}}"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.min.js"></script>
 	<script type="text/javascript" src="{{asset "js/script.js"}}"></script>
 </body>
 </html>
