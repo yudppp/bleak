@@ -97,6 +97,24 @@ $color-primary-active:		#2D57B7; /* Dark */
 	 -ms-flex-align: center;
 	 -webkit-align-items: center;
 	 align-items: center;
+
+	 img {
+		 transition: all ease-out 0.2s;
+		 transform: scale(1);
+	 }
+
+	 &:hover,
+	 &:focus {
+			 box-shadow: 0 1px 2px rgba(0,0,0,0.05), 0 2px 6px rgba(0,0,0,0.05), 0 8px 48px rgba(0,0,0,0.1);
+			 img {
+				 transform: scale(1.08);
+				 opacity: 0.9;
+			 }
+			 &:after {
+				 border-top-width: 0;
+				 box-shadow: none;
+			 }
+	 }
 }
 
 /* ==========================================================================
@@ -1358,9 +1376,9 @@ body {
 				width: 110%;
 				height: 4em;
 				background: #fff;
-				border-top: 4px solid $color-primary-default;
+				// border-top: 4px solid $color-primary-default;
 				box-shadow: 0 0 2em rgba(0,0,0,0.2);
-				transform: rotate(5deg);
+				transform: rotate(3deg);
 				transition: all ease-out 0.2s;
 			}
 		}
@@ -1375,7 +1393,7 @@ body {
 			.post-image {
 
 				img {
-					transform: scale(1.05);
+					transform: scale(1.08);
 					opacity: 0.5;
 				}
 
