@@ -146,13 +146,17 @@ jQuery(function($) {
 
 
 	function swipers() {
-		var swiper = new Swiper('.swiper-container', {
-				pagination: '.swiper-pagination',
-				slidesPerView: 'auto',
-				centeredSlides: true,
-				paginationClickable: true,
-				spaceBetween: 30
-		});
+		if ($('.swiper-container').length) {
+			setTimeout(function() {
+				var swiper = new Swiper('.swiper-container', {
+						pagination: '.swiper-pagination',
+						slidesPerView: 'auto',
+						centeredSlides: true,
+						paginationClickable: true,
+						spaceBetween: 30
+				});
+			}, 50);
+		}
 	}
 	swipers()
 
@@ -301,9 +305,6 @@ jQuery(function($) {
 				History.pushState({}, title, url);
 	        }
 	    }
-			setTimeout(function() {
-				swipers()
-			}, 700);
 	});
 
 	$('body').on('click', '#post-index .post .js-ajax-link', function() {
