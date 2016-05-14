@@ -114,38 +114,8 @@ jQuery(function($) {
 	}
 	video();
 
-	/* ==========================================================================
-	   Initialize and load Disqus
-	   ========================================================================== */
 
-	function comments() {
-		if (typeof disqus === 'undefined' || !document.getElementById('disqus_thread')) {
-			$('.post-comments').css({
-				'display' : 'none'
-			});
-		} else {
-			if (window.DISQUS) {
-				return DISQUS.reset({
-					reload: true,
-					config: function () {
-						this.page.identifier = location.pathname;
-						this.page.url = location.origin + location.pathname;
-					}
-				});
-			}
-
-			$.ajax({
-				type: "GET",
-				url: "//" + disqus + ".disqus.com/embed.js",
-				dataType: "script",
-				cache: true
-			});
-		}
-	}
-	comments();
-
-
-	function swipers() {
+	function swipers(sleepTime) {
 		if ($('.swiper-container').length) {
 			setTimeout(function() {
 				var swiper = new Swiper('.swiper-container', {
@@ -155,10 +125,10 @@ jQuery(function($) {
 						paginationClickable: true,
 						spaceBetween: 30
 				});
-			}, 50);
+			}, sleepTime);
 		}
 	}
-	swipers()
+	swipers(0)
 
 	/* ==========================================================================
 	   Reading Time
@@ -192,10 +162,9 @@ jQuery(function($) {
 		ajaxLinkClass();
 		highlight();
 		video();
-		comments();
 		currentMenuFix();
 		readingTime();
-		swipers();
+		swipers(50);
 	}
 
 	/* ==========================================================================
